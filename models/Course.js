@@ -20,7 +20,11 @@ const CourseSchema = new Schema({
   slug:{
     type:String,
     unqiue:true
-  }
+  },
+  category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Category',
+  },
 });
 
 CourseSchema.pre('validate',function(next){
